@@ -1,0 +1,51 @@
+.header--principal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    height: 70px;
+    background-color: $color-primario;
+    border-bottom: 2px solid $color-background;
+    @include media(desktop-s) {
+        justify-content: space-around;
+    }
+}
+
+.nav--header ul {
+    display: none;
+    width: 400px;
+    justify-content: space-between;
+    li {
+        font-size: 1.6rem;
+        list-style: none;
+    }
+    a {
+        text-decoration: none;
+        color: $color-claro;
+        @include title($font-text);
+        &:hover {
+            color: $color-background;
+        }
+    }
+    @include media(desktop-s) {
+        display: flex;
+    }
+}
+
+.header__busqueda {
+    display: none;
+    text-decoration: none;
+    i {
+        font-size: 1.6rem;
+        margin: 4px 8px 4px 4px;
+        color: $color-background;
+    }
+    span {
+        font-size: 1.6rem;
+        color: $color-claro;
+        @include title($font-text);
+    }
+    @include media(desktop-s) {
+        display: flex;
+    }
+}

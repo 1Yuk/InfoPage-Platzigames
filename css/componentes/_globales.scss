@@ -1,0 +1,46 @@
+$font-titles: "Lato", sans-serif;
+$font-text: "Oswald", sans-serif;
+$color-primario: #333333;
+$color-claro: #FFFFFF;
+$color-background: #8841DA;
+$color-background-s: #682faa;
+$color-variacion: #3f579a;
+
+@mixin box {
+    border-radius: 20px;
+    box-shadow: 0 20px 33px 0 rgba($color-primario, 0.20);
+    color: $color-primario;
+    background-color: $color-claro;
+}
+
+@mixin title($fonts) {
+    @if $fonts == $font-titles {
+        font-family: $font-titles;
+    }
+    @else {
+        font-family: $font-text;
+        text-transform: uppercase;
+    }
+}
+
+@function get-opacity($color,$cantidad) {
+    @return rgba($color,$cantidad);
+}
+
+@each $header, $size in (h1: 30px, h2: 25px, h3: 20px){
+    #{$header} {
+        font-size: $size;
+        margin: 0;
+    }
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+    @include title($font-titles);
+}
